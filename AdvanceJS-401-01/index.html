@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdvanceJS-401-01</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        box-sizing: border-box;
+        font-family: system-ui,'Segoe UI', Roboto,'Open Sans', sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #input {
+        border: 3px solid rgb(157,255,216);
+        border-radius: 8px;
+    }
+
+    #para {
+        font-size: 40px;
+        color: navy;
+        font-style: italic;
+    }
+</style>
+<body>
+    <input id="input" type="text" value="">
+    <p id="para"></p>
+</body>
+    <script>
+        const input = document.getElementById("input");
+        const para = document.getElementById("para");
+
+        input.addEventListener("keyup",putValue);
+        input.addEventListener("keypress",putValue);
+        function putValue(){
+            para.innerText = input.value;
+        }
+    </script>
+</html>
