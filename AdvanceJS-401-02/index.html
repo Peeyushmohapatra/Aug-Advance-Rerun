@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdvanceJS-401-02</title>
+</head>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+            font-family: system-ui,'Segoe UI', Roboto,'Open Sans', sans-serif;
+        }
+
+        #body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+            padding: 20px;
+        }
+
+        #child{
+            height: 40px;
+            width: 140px;
+            border: 2px solid black;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: blue;
+            color: white;
+            cursor: pointer;
+        }
+
+        .childs{
+            height: 40px;
+            width: 140px;
+            border: 2px solid black;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: blue;
+            color: white;
+        }
+    </style>
+<body id="body">
+    <div id="child">1st Child</div>
+</body>
+<script>
+    const parent = document.getElementById("body");
+    const child = document.getElementById("child");
+
+    child.addEventListener("click",createBlock);
+
+    function createBlock(){
+        for(let i=2; i<18; i++){
+            const div = document.createElement("div");
+            div.setAttribute("class","childs");
+            if(i === 2){
+                div.innerText = `${i}nd Child`
+            }
+
+            if(i === 3){
+                div.innerText = `${i}rd Child`
+            }
+            if(i % 2 ===0){
+                div.style.backgroundColor = "rgb(0,255,0)"
+            }
+
+            if(i === 17){
+                div.style.backgroundColor = "rgb(219,112,147)"
+            }
+
+            if(i%3 === 0){
+                if(i===9){
+                    div.style.backgroundColor = "rgb(0,128,0)"
+                }else{
+                    div.style.backgroundColor = "white"
+                    div.style.color = "black"
+                }
+            }
+
+            if(i > 3 && i < 18){
+                div.innerText = `${i}th Child`
+            }
+            parent.append(div)
+        }
+    }
+</script>
+</html>

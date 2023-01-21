@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdvanceJS-402-02</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        box-sizing: border-box;
+        font-family: system-ui,'Segoe UI', Roboto, Oxygen,'Open Sans',sans-serif;
+    }
+
+    body {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top:20px;
+        gap: 10px;
+    }
+
+    .h1{
+        color: rgb(0,128,0);
+    }
+
+    .h3{
+        color: rgb(0,128,4);
+    }
+
+    #button{
+        cursor: pointer;
+    }
+</style>
+<body>
+    <h1 class="h1">Geekster</h1>
+    <p class="p">Click on the button to add image element</p>
+    <button id="button">Click here</button>
+</body>
+<script>
+    const button = document.getElementById("button");
+    const body = document.getElementsByTagName("body")[0];
+    button.addEventListener("click",addElement);
+
+
+    function addElement(){
+        const h3 = document.createElement("h3");
+        h3.setAttribute("class","h3");
+        h3.innerText = "Image Element Added."
+        const img = document.createElement("img");
+        img.style.height = "48px";
+        img.style.width = "180px";
+        img.setAttribute("src","./download.png")
+        body.append(h3);
+        body.append(img);
+    }
+</script>
+</html>
